@@ -15,10 +15,7 @@ import java.nio.charset.Charset;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class MeuJar {/*
-    public static String pegaGit(){
-        return "legal";
-    }*/
+public class MeuJar {
     
     public static String pegaGit(String user, String palavra){
         String linha;
