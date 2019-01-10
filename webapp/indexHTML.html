@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <title>Tarefa 4</title>
+        <script type="text/javascript" src="jquery.js"></script> //biblioteca jQuery
+        <script type="text/javascript">
+            $(document).ready(function(){
+                comeca();
+            })
+            var timerI = null;
+            var timerR = false;
+ 
+            function para(){
+                if(timerR)
+                    clearTimeout(timerI)
+                timerR = false;
+            }
+            function comeca(){
+                para();
+                frase();
+            }
+            function frase(){
+                $.ajax({
+                    url:"ola.jsp",
+                    success: function (textStatus){
+                        $('#frase').html(textStatus); //mostrando resultado
+                    }
+                })
+                timerI = setTimeout("frase()", 10000);//tempo de espera 10s
+                        timerR = true;
+ 
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="frase">
+        </div>
+    </body>
+</html>
